@@ -14,7 +14,7 @@ export default class Layout extends Component {
     const { location } = this.props;
     //react inline styles
     const containerStyle = {
-      marginTop:"60px"
+      marginTop:"60px",
     };
 
     return (
@@ -28,8 +28,9 @@ export default class Layout extends Component {
               </div>
             </div>
           </div>
-          <Footer />
+
         </div>
+        <Footer />
       </div>
     );
   }
