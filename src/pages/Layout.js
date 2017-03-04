@@ -17,6 +17,13 @@ export default class Layout extends Component {
       marginTop:"60px",
     };
 
+    var footerContainer = {
+      backgroundColor: '#000',
+      marginLeft:-8,
+      marginRight:-8,
+      marginBottom:-5
+    }
+
     return (
       <div>
         <Nav location={location} />
@@ -30,7 +37,9 @@ export default class Layout extends Component {
           </div>
 
         </div>
-        <Footer />
+        <div className="container-fluid" style={footerContainer}>
+          <Footer />
+        </div>
       </div>
     );
   }

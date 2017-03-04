@@ -12,14 +12,18 @@ export default class TextPanel extends Component {
 
     var textStyle = {
       marginLeft:10,
-      marginRight:10
+      marginRight:10,
+      fontSize: 16,
+      textAlign: 'center'
     }
 
     return (
       <div className='text-panel'>
         <p className="lead" style={textStyle} >{this.props.infotext}</p>
-        <img className="img-responsive" style={style} src="src\img\gameplay\web_image_battle_02.png"  />
+
       </div>
     );
   }
 }
+
+//<img className="img-responsive" style={style} src="src\img\gameplay\web_image_battle_02.png"  />
