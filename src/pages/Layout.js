@@ -15,13 +15,17 @@ export default class Layout extends Component {
     //react inline styles
     const containerStyle = {
       marginTop:"60px",
+
     };
 
     var footerContainer = {
-      backgroundColor: '#000',
+      backgroundColor: '#222',
       marginLeft:-8,
       marginRight:-8,
-      marginBottom:-5
+      marginBottom:-5,
+      position:'fixed',
+      bottom:0,
+      width:'100%',
     }
 
     return (
@@ -29,10 +33,14 @@ export default class Layout extends Component {
         <Nav location={location} />
         <div className = "container" style={containerStyle}>
           <div className="row">
-            <div className="col-lg-12">
+            <div className="col-xs-0 col-sm-0 col-md-2">
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-12">
               <div>
                 {this.props.children}
               </div>
+            </div>
+            <div className="col-xs-0 col-sm-0 col-md-2">
             </div>
           </div>
 

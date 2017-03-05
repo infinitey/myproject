@@ -32,7 +32,7 @@ export default class Footer extends Component {
         </div>
 
         <div className="hidden-xs col-sm-8 col-md-4" style={{}}>
-          <table style={{margin:'auto'}} >
+          <table style={{margin:'auto', marginTop:12}} >
             <td><p style={footerText}>Developer Website</p></td>
             <td><p style={footerText}>|</p></td>
             <td><p style={footerText}>About</p></td>
