@@ -75,15 +75,15 @@
 
 	var _Gameplay2 = _interopRequireDefault(_Gameplay);
 
-	var _News = __webpack_require__(321);
+	var _News = __webpack_require__(322);
 
 	var _News2 = _interopRequireDefault(_News);
 
-	var _Presskit = __webpack_require__(322);
+	var _Presskit = __webpack_require__(323);
 
 	var _Presskit2 = _interopRequireDefault(_Presskit);
 
-	var _World = __webpack_require__(323);
+	var _World = __webpack_require__(324);
 
 	var _World2 = _interopRequireDefault(_World);
 
@@ -28172,6 +28172,17 @@
 
 	      var containerStyle = {
 	        marginTop: "60px"
+
+	      };
+
+	      var footerContainer = {
+	        backgroundColor: '#222',
+	        marginLeft: -8,
+	        marginRight: -8,
+	        marginBottom: -5,
+	        position: 'fixed',
+	        bottom: 0,
+	        width: '100%'
 	      };
 
 	      return _react2.default.createElement(
@@ -28184,16 +28195,22 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'row' },
+	            _react2.default.createElement('div', { className: 'col-xs-0 col-sm-0 col-md-2' }),
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'col-lg-12' },
+	              { className: 'col-xs-12 col-sm-12 col-md-12' },
 	              _react2.default.createElement(
 	                'div',
 	                null,
 	                this.props.children
 	              )
-	            )
-	          ),
+	            ),
+	            _react2.default.createElement('div', { className: 'col-xs-0 col-sm-0 col-md-2' })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'container-fluid', style: footerContainer },
 	          _react2.default.createElement(_Footer2.default, null)
 	        )
 	      );
@@ -28562,15 +28579,16 @@
 
 	      return _react2.default.createElement(
 	        "div",
-	        { className: "col-md-6" },
+	        { className: "col-md-6 container-fluid" },
 	        _react2.default.createElement(
-	          "p",
+	          "h1",
 	          null,
 	          title
 	        ),
+	        _react2.default.createElement("img", { className: "featurette-image img-circle img-responsive pull-left", src: "http://placehold.it/500x500" }),
 	        _react2.default.createElement(
 	          "p",
-	          null,
+	          { className: "lead" },
 	          textContent
 	        ),
 	        _react2.default.createElement(
@@ -28590,7 +28608,7 @@
 /* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -28631,24 +28649,146 @@
 	  }
 
 	  (0, _createClass3.default)(Footer, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
+
+	      var footerText = {
+	        color: '#FFF',
+	        marginRight: 5,
+	        marginLeft: 5
+	      };
+
+	      var socialIcons = {
+	        padding: 5
+	      };
+
+	      var centerB = {
+	        margin: 'auto',
+	        textAlign: 'center'
+	      };
+
 	      return _react2.default.createElement(
-	        "footer",
-	        null,
+	        'div',
+	        { className: 'row', style: { padding: 15 } },
+	        _react2.default.createElement('div', { className: 'col-xs-3 col-sm-1 col-md-3' }),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "row" },
+	          'div',
+	          { className: 'hidden-xs hidden-sm col-md-1' },
+	          _react2.default.createElement('img', { className: 'img-responsive', src: 'src\\img\\footer\\web_footer_ddslogo.png' })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'hidden-xs col-sm-8 col-md-4', style: {} },
 	          _react2.default.createElement(
-	            "div",
-	            { className: "col-lg-12" },
+	            'table',
+	            { style: { margin: 'auto', marginTop: 12 } },
 	            _react2.default.createElement(
-	              "p",
+	              'td',
 	              null,
-	              "Copyright \xA9 Monster Chronicles 2016"
+	              _react2.default.createElement(
+	                'p',
+	                { style: footerText },
+	                'Developer Website'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement(
+	                'p',
+	                { style: footerText },
+	                '|'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement(
+	                'p',
+	                { style: footerText },
+	                'About'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement(
+	                'p',
+	                { style: footerText },
+	                '|'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement(
+	                'p',
+	                { style: footerText },
+	                'Term of Service'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement(
+	                'p',
+	                { style: footerText },
+	                '|'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement(
+	                'p',
+	                { style: footerText },
+	                'Private Policy'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement(
+	                'p',
+	                { style: footerText },
+	                '|'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement(
+	                'p',
+	                { style: footerText },
+	                'Contact Us'
+	              )
 	            )
 	          )
-	        )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'col-xs-6 col-sm-3 col-md-1', style: centerB },
+	          _react2.default.createElement(
+	            'table',
+	            { style: { margin: 'auto' } },
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement('img', { className: 'img-responsive', style: socialIcons, src: 'src\\img\\footer\\web_footer_btn_facbook.png' })
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement('img', { className: 'img-responsive', style: socialIcons, src: 'src\\img\\footer\\web_footer_btn_twitter.png' })
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              null,
+	              _react2.default.createElement('img', { className: 'img-responsive', style: socialIcons, src: 'src\\img\\footer\\web_footer_btn_youtube.png' })
+	            )
+	          )
+	        ),
+	        _react2.default.createElement('div', { className: 'col-xs-3 col-sm-0 col-md-3' })
 	      );
 	    }
 	  }]);
@@ -28814,7 +28954,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 
 	var _getPrototypeOf = __webpack_require__(298);
@@ -28841,90 +28981,207 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _TextPanel = __webpack_require__(321);
+
+	var _TextPanel2 = _interopRequireDefault(_TextPanel);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//System
+	//Unique Battle System
+	//Gameplay that combines SRPG with Tic Tac Toe;
+	//Warp and position your monsters across a 3x3 battlefield to attack enemies
+	//Unleash Devastating Chains
+	//Plan and execute strings of combos with your allies to unleash massive damage!
+	//Intriguing Storyline
+	//Experience the mystery behind 3 warring factions and their dark past. Step into the shoes of Indra on his journey of self-discovery and his pursuit of truth and justice as you complete the quests. Immerse yourself in an interactive tale of love and loss.
+	//Collect, Level Up and Evolve Your Monsters!
+	//
+	//Feed your Monster
+	//Improve their stats and befriend them to unlock memorable conversations.
+	//Endless Customisation
+	//Optimise your Monster party with over 250 skills. Equip and summon Puffs to aid you in battles.
+
 	var Gameplay = function (_React$Component) {
-	    (0, _inherits3.default)(Gameplay, _React$Component);
+	  (0, _inherits3.default)(Gameplay, _React$Component);
 
-	    function Gameplay() {
-	        (0, _classCallCheck3.default)(this, Gameplay);
-	        return (0, _possibleConstructorReturn3.default)(this, (Gameplay.__proto__ || (0, _getPrototypeOf2.default)(Gameplay)).apply(this, arguments));
-	    }
+	  function Gameplay() {
+	    (0, _classCallCheck3.default)(this, Gameplay);
+	    return (0, _possibleConstructorReturn3.default)(this, (Gameplay.__proto__ || (0, _getPrototypeOf2.default)(Gameplay)).apply(this, arguments));
+	  }
 
-	    (0, _createClass3.default)(Gameplay, [{
-	        key: "render",
-	        value: function render() {
-	            return _react2.default.createElement(
+	  (0, _createClass3.default)(Gameplay, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "container", style: { marginTop: 20 } },
+	        _react2.default.createElement("img", { className: "img-responsive col-md-8 col-md-offset-2", src: "src/img/gameplay/title/web_title_system.png" }),
+	        _react2.default.createElement("hr", { className: "featurette-divider" }),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "featurette row", id: "services" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-6 col-md-offset-1" },
+	              _react2.default.createElement(
 	                "div",
-	                { className: "container" },
+	                { className: "row" },
+	                _react2.default.createElement("img", { className: "img-responsive col-md-10 pull-right ", src: "src/img/gameplay/title/web_title_battle.png" })
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "featurette", id: "about" },
-	                    _react2.default.createElement("img", { className: "featurette-image img-circle img-responsive pull-right", src: "http://placehold.it/500x500" }),
-	                    _react2.default.createElement(
-	                        "h2",
-	                        { className: "featurette-heading" },
-	                        "This First Heading",
-	                        _react2.default.createElement(
-	                            "span",
-	                            { className: "text-muted" },
-	                            "Will Catch Your Eye"
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        "p",
-	                        { className: "lead" },
-	                        "Warp and position your monsters across a 3x3 battlefield to attack enemies. Plan and execute strings of combos with your allies to unleash massive damage!"
-	                    )
-	                ),
-	                _react2.default.createElement("hr", { className: "featurette-divider" }),
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "featurette", id: "services" },
-	                    _react2.default.createElement("img", { className: "featurette-image img-circle img-responsive pull-left", src: "http://placehold.it/500x500" }),
-	                    _react2.default.createElement(
-	                        "h2",
-	                        { className: "featurette-heading" },
-	                        "The Second Heading",
-	                        _react2.default.createElement(
-	                            "span",
-	                            { className: "text-muted" },
-	                            "Is Pretty Cool Too."
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        "p",
-	                        { className: "lead" },
-	                        "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo."
-	                    )
-	                ),
-	                _react2.default.createElement("hr", { className: "featurette-divider" }),
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "featurette", id: "contact" },
-	                    _react2.default.createElement("img", { className: "featurette-image img-circle img-responsive pull-right", src: "http://placehold.it/500x500" }),
-	                    _react2.default.createElement(
-	                        "h2",
-	                        { className: "featurette-heading" },
-	                        "The Third Heading",
-	                        _react2.default.createElement(
-	                            "span",
-	                            { className: "text-muted" },
-	                            "Will Seal the Deal."
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        "p",
-	                        { className: "lead" },
-	                        "Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo."
-	                    )
-	                ),
-	                _react2.default.createElement("hr", { className: "featurette-divider" })
-	            );
-	        }
-	    }]);
-	    return Gameplay;
+	                  _TextPanel2.default,
+	                  { infotext: "Gameplay that combines SRPG with Tic Tac Toe; Warp and position your monsters across a 3x3 battlefield to attack enemies" },
+	                  " "
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-4" },
+	              _react2.default.createElement("img", { className: "featurette-image img-responsive pull-right", src: "src/img/gameplay/web_image_battle_01.png" })
+	            )
+	          )
+	        ),
+	        _react2.default.createElement("hr", { className: "featurette-divider" }),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "featurette", id: "contact" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-5 col-md-offset-1" },
+	              _react2.default.createElement("img", { className: "featurette-image  img-responsive pull-left", src: "src/img/gameplay/web_screenshot_chains_01.png" })
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-6" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement("img", { className: "img-responsive col-md-8 pull-left ", src: "src/img/gameplay/title/web_title_chains.png" })
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement(_TextPanel2.default, { infotext: "Plan and execute strings of combos with your allies to unleash massive damage!" })
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement("hr", { className: "featurette-divider" }),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "featurette", id: "services" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-5 col-md-offset-2" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement("img", { className: "img-responsive col-md-8 pull-right ", src: "src/img/gameplay/title/web_title_feed.png" })
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement(_TextPanel2.default, { infotext: "Improve their stats and befriend them to unlock memorable conversations." })
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-4" },
+	              _react2.default.createElement("img", { className: "featurette-image img-responsive pull-right", src: "src/img/gameplay/web_image_feed_01.png" })
+	            )
+	          )
+	        ),
+	        _react2.default.createElement("img", { className: "img-responsive col-md-8 col-md-offset-2", src: "src/img/gameplay/title/web_title_monster.png" }),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "", id: "about" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row" },
+	            _react2.default.createElement("img", { className: "img-responsive col-xs-6 col-sm-4", src: "src/img/gameplay/web_image_collect_01.png" }),
+	            _react2.default.createElement("img", { className: "img-responsive col-xs-6 col-sm-4", src: "src/img/gameplay/web_image_collect_02.png" }),
+	            _react2.default.createElement("img", { className: "img-responsive col-xs-6 col-sm-4", src: "src/img/gameplay/web_image_collect_03.png" }),
+	            _react2.default.createElement("img", { className: "img-responsive col-md-6 pull-right", src: "src/img/gameplay/title/web_title_collect.png" })
+	          )
+	        ),
+	        _react2.default.createElement("hr", { className: "featurette-divider" }),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "featurette", id: "services" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-5 col-md-offset-2" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement("img", { className: "img-responsive col-md-8 pull-right ", src: "src/img/gameplay/title/web_title_feed.png" })
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement(_TextPanel2.default, { infotext: "Improve their stats and befriend them to unlock memorable conversations." })
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-4" },
+	              _react2.default.createElement("img", { className: "featurette-image img-responsive pull-right", src: "src/img/gameplay/web_image_feed_01.png" })
+	            )
+	          )
+	        ),
+	        _react2.default.createElement("hr", { className: "featurette-divider" }),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "featurette", id: "contact" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row" },
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-5 col-md-offset-1" },
+	              _react2.default.createElement("img", { className: "featurette-image img-circle img-responsive pull-left", src: "src/img/gameplay/web_custom_01.png" })
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "col-md-6" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement("img", { className: "img-responsive col-md-10 pull-left ", src: "src/img/gameplay/title/web_title_custom.png" })
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "row" },
+	                _react2.default.createElement(_TextPanel2.default, { infotext: "Optimise your Monster party with over 250 skills. Equip and summon Puffs to aid you in battles." })
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement("hr", { className: "featurette-divider" })
+	      );
+	    }
+	  }]);
+	  return Gameplay;
 	}(_react2.default.Component);
+
+	//<span className="text-muted">Is Pretty Cool Too.</span>
 
 	/*
 	<hr className="featurette-divider">
@@ -28968,6 +29225,86 @@
 
 /***/ },
 /* 321 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(298);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(302);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(303);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(307);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(308);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var TextPanel = function (_Component) {
+	  (0, _inherits3.default)(TextPanel, _Component);
+
+	  function TextPanel() {
+	    (0, _classCallCheck3.default)(this, TextPanel);
+	    return (0, _possibleConstructorReturn3.default)(this, (TextPanel.__proto__ || (0, _getPrototypeOf2.default)(TextPanel)).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(TextPanel, [{
+	    key: 'render',
+	    value: function render() {
+	      var style = {
+	        maxHeight: 50,
+	        position: 'absolute',
+	        right: 40,
+	        bottom: 30
+	      };
+
+	      var textStyle = {
+	        marginLeft: 10,
+	        marginRight: 10,
+	        fontSize: 16,
+	        textAlign: 'center'
+	      };
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'text-panel' },
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'lead', style: textStyle },
+	          this.props.infotext
+	        )
+	      );
+	    }
+	  }]);
+	  return TextPanel;
+	}(_react.Component);
+
+	//<img className="img-responsive" style={style} src="src\img\gameplay\web_image_battle_02.png"  />
+
+
+	exports.default = TextPanel;
+
+/***/ },
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29017,7 +29354,7 @@
 	  (0, _createClass3.default)(News, [{
 	    key: "render",
 	    value: function render() {
-	      var Articles = [_react2.default.createElement(_NewsArticle2.default, { key: 1, title: "hahaha fuck", textContent: "123123123" }), _react2.default.createElement(_NewsArticle2.default, { key: 2, title: "hahaha fuck", textContent: "123123123" }), _react2.default.createElement(_NewsArticle2.default, { key: 3, title: "hahaha fuck", textContent: "123123123" }), _react2.default.createElement(_NewsArticle2.default, { key: 4, title: "hahaha fuck", textContent: "123123123" }), _react2.default.createElement(_NewsArticle2.default, { key: 5, title: "hahaha fuck", textContent: "123123123" }), _react2.default.createElement(_NewsArticle2.default, { key: 6, title: "hahaha fuck", textContent: "123123123" }), _react2.default.createElement(_NewsArticle2.default, { key: 7, title: "hahaha fuck", textContent: "123123123" }), _react2.default.createElement(_NewsArticle2.default, { key: 8, title: "hahaha fuck", textContent: "123123123" }), _react2.default.createElement(_NewsArticle2.default, { key: 9, title: "hahaha fuck", textContent: "123123123" }), _react2.default.createElement(_NewsArticle2.default, { key: 10, title: "hahaha fuck", textContent: "123123123" }), _react2.default.createElement(_NewsArticle2.default, { key: 11, title: "hahaha fuck", textContent: "123123123" })];
+	      var Articles = [_react2.default.createElement(_NewsArticle2.default, { key: 1, title: "News Title 1", textContent: "Experience the mystery behind 3 warring factions and their dark past. Step into the shoes of Indra on his journey of self-discovery and his pursuit of truth and justice as you complete the quests. Immerse yourself in an interactive tale of love and loss." }), _react2.default.createElement(_NewsArticle2.default, { key: 2, title: "News Title 2", textContent: "Experience the mystery behind 3 warring factions and their dark past. Step into the shoes of Indra on his journey of self-discovery and his pursuit of truth and justice as you complete the quests. Immerse yourself in an interactive tale of love and loss." })];
 	      return _react2.default.createElement(
 	        "div",
 	        null,
@@ -29035,7 +29372,7 @@
 	exports.default = News;
 
 /***/ },
-/* 322 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29082,9 +29419,112 @@
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "h1",
+	        "div",
 	        null,
-	        "Presskit"
+	        _react2.default.createElement(
+	          "h1",
+	          null,
+	          "Presskit"
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          { className: "lead" },
+	          "Thank you for finding interest and taking a look at Monster Chronicles. To make things easy, you can download and read more relevant materials which include descriptions, screenshots and video by clicking on the link below."
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { id: "mc_embed_signup" },
+	          _react2.default.createElement(
+	            "form",
+	            { action: "//deltaduckstudios.us11.list-manage.com/subscribe/post?u=ab74f0be2316e479e918957e1&id=de4059c955", method: "post", id: "mc-embedded-subscribe-form", name: "mc-embedded-subscribe-form", className: "validate", target: "_blank", noValidate: true },
+	            _react2.default.createElement(
+	              "div",
+	              { id: "mc_embed_signup_scroll" },
+	              _react2.default.createElement(
+	                "h2",
+	                null,
+	                "Subscribe to our mailing list"
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "indicates-required" },
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "asterisk" },
+	                  "*"
+	                ),
+	                " indicates required"
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "mc-field-group" },
+	                _react2.default.createElement(
+	                  "label",
+	                  { htmlFor: "mce-EMAIL" },
+	                  "Email Address  ",
+	                  _react2.default.createElement(
+	                    "span",
+	                    { className: "asterisk" },
+	                    "*"
+	                  )
+	                ),
+	                _react2.default.createElement("input", { type: "email", defaultValue: true, name: "EMAIL", className: "required email", id: "mce-EMAIL" })
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "mc-field-group" },
+	                _react2.default.createElement(
+	                  "label",
+	                  { htmlFor: "mce-FNAME" },
+	                  "Name "
+	                ),
+	                _react2.default.createElement("input", { type: "text", defaultValue: true, name: "FNAME", className: true, id: "mce-FNAME" })
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "mc-field-group" },
+	                _react2.default.createElement(
+	                  "label",
+	                  { htmlFor: "mce-MMERGE2" },
+	                  "Country "
+	                ),
+	                _react2.default.createElement("input", { type: "text", defaultValue: true, name: "MMERGE2", className: true, id: "mce-MMERGE2" })
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "mc-field-group" },
+	                _react2.default.createElement(
+	                  "label",
+	                  { htmlFor: "mce-MMERGE3" },
+	                  "What device do you use? (Android, iOS, Windows) "
+	                ),
+	                _react2.default.createElement("input", { type: "text", defaultValue: true, name: "MMERGE3", className: true, id: "mce-MMERGE3" })
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { id: "mce-responses", className: "clear" },
+	                _react2.default.createElement("div", { className: "response", id: "mce-error-response", style: { display: 'none' } }),
+	                _react2.default.createElement("div", { className: "response", id: "mce-success-response", style: { display: 'none' } })
+	              ),
+	              "    ",
+	              _react2.default.createElement(
+	                "div",
+	                { style: { position: 'absolute', left: '-5000px' }, "aria-hidden": "true" },
+	                _react2.default.createElement("input", { type: "text", name: "b_ab74f0be2316e479e918957e1_de4059c955", tabIndex: -1, defaultValue: true })
+	              ),
+	              _react2.default.createElement(
+	                "div",
+	                { className: "clear" },
+	                _react2.default.createElement("input", { type: "submit", defaultValue: "Subscribe", name: "subscribe", id: "mc-embedded-subscribe", className: "button" })
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "a",
+	          { className: "btn btn-default", href: "#" },
+	          "Download Presskit"
+	        )
 	      );
 	    }
 	  }]);
@@ -29094,7 +29534,7 @@
 	exports.default = Presskit;
 
 /***/ },
-/* 323 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -29127,6 +29567,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _TextPanel = __webpack_require__(321);
+
+	var _TextPanel2 = _interopRequireDefault(_TextPanel);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var World = function (_React$Component) {
@@ -29140,15 +29584,37 @@
 	  (0, _createClass3.default)(World, [{
 	    key: "render",
 	    value: function render() {
+	      var containerStyle = {
+	        backgroundImage: "src/img/gameplay/web_system_bg.jpg"
+	      };
 	      return _react2.default.createElement(
-	        "h1",
-	        null,
-	        "World"
+	        "div",
+	        { style: containerStyle },
+	        _react2.default.createElement(
+	          "div",
+	          null,
+	          _react2.default.createElement("img", { className: "img-responsive center-block", src: "src/img/mc_web_gamelogo.png" }),
+	          _react2.default.createElement(
+	            "p",
+	            { className: "lead text-center", style: { fontSize: 16, paddingTop: 10 } },
+	            "A Monster Collection Strategy RPG with a Tic-Tac-Toe Twist."
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { style: { paddingBottom: 10 } },
+	          _react2.default.createElement(_TextPanel2.default, { infotext: "Monster Chronicles is a Strategy RPG with an unique battle system that combines the best of hardcore games like Fire Emblem with the simplicity of Tic-Tac-Toe.  Collect, train and customise your own party of cute and cool monsters, battle through an expansive story in Ometia and become the best monster trainer." })
+	        ),
+	        _react2.default.createElement("hr", { className: "featurette-divider", style: { marginBottom: 10 } }),
+	        _react2.default.createElement("img", { className: "img-responsive center-block", src: "src/img/mc_web_icon_world.png" })
 	      );
 	    }
 	  }]);
 	  return World;
 	}(_react2.default.Component);
+
+	//
+
 
 	exports.default = World;
 

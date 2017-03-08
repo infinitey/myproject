@@ -88,11 +88,9 @@ export default class Gameplay extends React.Component {
         <img className="img-responsive col-md-8 col-md-offset-2" src="src/img/gameplay/title/web_title_monster.png"/>
 
         <div className="" id="about">
-          <div className="row">
-            <img className="img-responsive col-xs-6 col-sm-4" src="src/img/gameplay/web_image_collect_01.png"/>
-            <img className="img-responsive col-xs-6 col-sm-4" src="src/img/gameplay/web_image_collect_02.png"/>
-            <img className="img-responsive col-xs-6 col-sm-4" src="src/img/gameplay/web_image_collect_03.png"/>
-            <img className="img-responsive col-md-6 pull-right" src="src/img/gameplay/title/web_title_collect.png"/>
+          <div className="row" style={{position: 'relative'}}>
+            <img className="img-responsive col-xs-10 col-sm-10 col-md-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 " style={{}}  src="src/img/gameplay/web_image_evolve.png"/>
+            <img className="img-responsive col-xs-10 col-sm-8 col-md-8 pull-right" style={{position: 'absolute', right: 30, bottom: 0, margin:'auto'}} src="src/img/gameplay/title/web_title_collect.png"/>
           </div>
         </div>
 

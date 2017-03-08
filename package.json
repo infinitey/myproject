@@ -25,7 +25,8 @@
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "build" : "webpack -p"
   },
   "description": ""
 }
