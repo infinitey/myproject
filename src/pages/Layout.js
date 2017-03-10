@@ -46,7 +46,7 @@ export default class Layout extends Component {
 
         </div>
         <div className="container-fluid" style={footerContainer}>
-          <Footer />
+          <Footer location={location} />
         </div>
       </div>
     );

@@ -87,6 +87,22 @@
 
 	var _World2 = _interopRequireDefault(_World);
 
+	var _About = __webpack_require__(325);
+
+	var _About2 = _interopRequireDefault(_About);
+
+	var _ContactUs = __webpack_require__(326);
+
+	var _ContactUs2 = _interopRequireDefault(_ContactUs);
+
+	var _PrivatePolicy = __webpack_require__(327);
+
+	var _PrivatePolicy2 = _interopRequireDefault(_PrivatePolicy);
+
+	var _Terms = __webpack_require__(329);
+
+	var _Terms2 = _interopRequireDefault(_Terms);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var app = document.getElementById('main');
@@ -101,7 +117,11 @@
 	    _react2.default.createElement(_reactRouter.Route, { path: 'world', name: 'world', component: _World2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'gameplay', name: 'gameplay', component: _Gameplay2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'presskit', name: 'presskit', component: _Presskit2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'news(/:article)', name: 'news', component: _News2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: 'news(/:article)', name: 'news', component: _News2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'about', name: 'about', component: _About2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'terms', name: 'terms', component: _Terms2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'privatepolicy', name: 'privatepolicy', component: _PrivatePolicy2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'contactus', name: 'contactus', component: _ContactUs2.default })
 	  )
 	), app);
 
@@ -28211,7 +28231,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'container-fluid', style: footerContainer },
-	          _react2.default.createElement(_Footer2.default, null)
+	          _react2.default.createElement(_Footer2.default, { location: location })
 	        )
 	      );
 	    }
@@ -28638,6 +28658,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(173);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Footer = function (_Component) {
@@ -28667,6 +28689,13 @@
 	        textAlign: 'center'
 	      };
 
+	      var location = this.props.location;
+
+	      var aboutClass = location.pathname.match(/^\/about/) ? "active" : "";
+	      var contactUsClass = location.pathname.match(/^\/contactus/) ? "active" : "";
+	      var privatePolicyClass = location.pathname.match(/^\/privatepolicy/) ? "active" : "";
+	      var termsClass = location.pathname.match(/^\/terms/) ? "active" : "";
+
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'row', style: { padding: 15 } },
@@ -28686,9 +28715,13 @@
 	              'td',
 	              null,
 	              _react2.default.createElement(
-	                'p',
-	                { style: footerText },
-	                'Developer Website'
+	                'a',
+	                { href: 'http://deltaduckstudios.com/' },
+	                _react2.default.createElement(
+	                  'p',
+	                  { style: footerText },
+	                  'Developer Website'
+	                )
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -28704,9 +28737,13 @@
 	              'td',
 	              null,
 	              _react2.default.createElement(
-	                'p',
-	                { style: footerText },
-	                'About'
+	                _reactRouter.Link,
+	                { to: 'about' },
+	                _react2.default.createElement(
+	                  'p',
+	                  { style: footerText },
+	                  'About'
+	                )
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -28722,9 +28759,13 @@
 	              'td',
 	              null,
 	              _react2.default.createElement(
-	                'p',
-	                { style: footerText },
-	                'Term of Service'
+	                _reactRouter.Link,
+	                { to: 'terms' },
+	                _react2.default.createElement(
+	                  'p',
+	                  { style: footerText },
+	                  'Term of Service'
+	                )
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -28740,9 +28781,13 @@
 	              'td',
 	              null,
 	              _react2.default.createElement(
-	                'p',
-	                { style: footerText },
-	                'Private Policy'
+	                _reactRouter.Link,
+	                { to: 'privatepolicy' },
+	                _react2.default.createElement(
+	                  'p',
+	                  { style: footerText },
+	                  'Private Policy'
+	                )
 	              )
 	            ),
 	            _react2.default.createElement(
@@ -28758,9 +28803,13 @@
 	              'td',
 	              null,
 	              _react2.default.createElement(
-	                'p',
-	                { style: footerText },
-	                'Contact Us'
+	                _reactRouter.Link,
+	                { to: 'contactus' },
+	                _react2.default.createElement(
+	                  'p',
+	                  { style: footerText },
+	                  'Contact Us'
+	                )
 	              )
 	            )
 	          )
@@ -28774,17 +28823,29 @@
 	            _react2.default.createElement(
 	              'td',
 	              null,
-	              _react2.default.createElement('img', { className: 'img-responsive', style: socialIcons, src: 'src\\img\\footer\\web_footer_btn_facbook.png' })
+	              _react2.default.createElement(
+	                'a',
+	                { href: 'https://www.facebook.com/deltaduckstudios/' },
+	                _react2.default.createElement('img', { className: 'img-responsive', style: socialIcons, src: 'src\\img\\footer\\web_footer_btn_facbook.png' })
+	              )
 	            ),
 	            _react2.default.createElement(
 	              'td',
 	              null,
-	              _react2.default.createElement('img', { className: 'img-responsive', style: socialIcons, src: 'src\\img\\footer\\web_footer_btn_twitter.png' })
+	              _react2.default.createElement(
+	                'a',
+	                { href: 'https://twitter.com/delta_duck' },
+	                _react2.default.createElement('img', { className: 'img-responsive', style: socialIcons, src: 'src\\img\\footer\\web_footer_btn_twitter.png' })
+	              )
 	            ),
 	            _react2.default.createElement(
 	              'td',
 	              null,
-	              _react2.default.createElement('img', { className: 'img-responsive', style: socialIcons, src: 'src\\img\\footer\\web_footer_btn_youtube.png' })
+	              _react2.default.createElement(
+	                'a',
+	                { href: 'https://www.youtube.com/channel/UCgYe3kg9Yaqk-dfr2UAbM3g' },
+	                _react2.default.createElement('img', { className: 'img-responsive', style: socialIcons, src: 'src\\img\\footer\\web_footer_btn_youtube.png' })
+	              )
 	            )
 	          )
 	        ),
@@ -29016,14 +29077,14 @@
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "container", style: { marginTop: 20 } },
-	        _react2.default.createElement("img", { className: "img-responsive col-md-8 col-md-offset-2", src: "src/img/gameplay/title/web_title_system.png" }),
-	        _react2.default.createElement("hr", { className: "featurette-divider" }),
+	        _react2.default.createElement("img", { className: "img-responsive col-xs-12 col-sm-12 col-md-8 col-md-offset-2", src: "src/img/gameplay/title/web_title_system.png" }),
+	        _react2.default.createElement("hr", { className: "featurette-divider", style: { backgroundColor: 'transparent' } }),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "featurette row", id: "services" },
+	          { className: "featurette row ", id: "services" },
 	          _react2.default.createElement(
 	            "div",
-	            { className: "row" },
+	            { className: "row hidden-xs hidden-sm" },
 	            _react2.default.createElement(
 	              "div",
 	              { className: "col-md-6 col-md-offset-1" },
@@ -29034,7 +29095,7 @@
 	              ),
 	              _react2.default.createElement(
 	                "div",
-	                { className: "row" },
+	                { className: "row row hidden-xs hidden-sm", style: { marginTop: -40 } },
 	                _react2.default.createElement(
 	                  _TextPanel2.default,
 	                  { infotext: "Gameplay that combines SRPG with Tic Tac Toe; Warp and position your monsters across a 3x3 battlefield to attack enemies" },
@@ -29047,91 +29108,123 @@
 	              { className: "col-md-4" },
 	              _react2.default.createElement("img", { className: "featurette-image img-responsive pull-right", src: "src/img/gameplay/web_image_battle_01.png" })
 	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row hidden-md hidden-lg", style: { margin: 9, marginBottom: -30 } },
+	            _react2.default.createElement("img", { className: "img-responsive col-sm-offset-1  col-xs-offset-1 col-sm-10  col-xs-10", style: { zIndex: 999 }, src: "src/img/gameplay/title/web_title_battle.png" }),
+	            _react2.default.createElement("img", { className: "img-responsive col-sm-offset-2  col-xs-offset-2 col-sm-8  col-xs-8", style: { marginTop: -50, zIndex: -999 }, src: "src/img/gameplay/web_image_battle_01.png" })
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row hidden-md hidden-lg col-sm-12  col-xs-12" },
+	            _react2.default.createElement(_TextPanel2.default, { infotext: "Gameplay that combines SRPG with Tic Tac Toe; Warp and position your monsters across a 3x3 battlefield to attack enemies" })
 	          )
 	        ),
-	        _react2.default.createElement("hr", { className: "featurette-divider" }),
+	        _react2.default.createElement("hr", { className: "featurette-divider", style: { backgroundColor: 'transparent' } }),
 	        _react2.default.createElement(
 	          "div",
 	          { className: "featurette", id: "contact" },
 	          _react2.default.createElement(
 	            "div",
-	            { className: "row" },
+	            { className: "row hidden-xs hidden-sm", style: { position: 'relative' } },
 	            _react2.default.createElement(
 	              "div",
-	              { className: "col-md-5 col-md-offset-1" },
-	              _react2.default.createElement("img", { className: "featurette-image  img-responsive pull-left", src: "src/img/gameplay/web_screenshot_chains_01.png" })
+	              { className: "col-xs-12 col-sm-12 col-md-5 col-md-offset-1" },
+	              _react2.default.createElement("img", { className: "img-responsive", src: "src/img/gameplay/web_screenshot_chains_01.png" })
 	            ),
 	            _react2.default.createElement(
 	              "div",
-	              { className: "col-md-6" },
+	              { className: "col-md-offset-4 col-md-8 row", style: { bottom: 100, right: -100, position: 'absolute' } },
 	              _react2.default.createElement(
 	                "div",
-	                { className: "row" },
-	                _react2.default.createElement("img", { className: "img-responsive col-md-8 pull-left ", src: "src/img/gameplay/title/web_title_chains.png" })
+	                { className: "" },
+	                _react2.default.createElement("img", { className: "img-responsive col-md-8 pull-left ", src: "src/img/gameplay/title/web_title_chains.png", style: { bottom: -30 } })
 	              ),
 	              _react2.default.createElement(
 	                "div",
-	                { className: "row" },
+	                { className: "row col-md-8" },
 	                _react2.default.createElement(_TextPanel2.default, { infotext: "Plan and execute strings of combos with your allies to unleash massive damage!" })
 	              )
 	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row hidden-md hidden-lg", style: { margin: 9, marginBottom: -30 } },
+	            _react2.default.createElement("img", { className: "img-responsive", style: { zIndex: 999 }, src: "src/img/gameplay/title/web_title_chains.png" }),
+	            _react2.default.createElement("img", { className: "img-responsive", style: { marginTop: -50, zIndex: -999 }, src: "src/img/gameplay/web_screenshot_chains_01.png" })
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row hidden-md hidden-lg col-sm-12  col-xs-12" },
+	            _react2.default.createElement(_TextPanel2.default, { infotext: "Plan and execute strings of combos with your allies to unleash massive damage!" })
 	          )
 	        ),
-	        _react2.default.createElement("hr", { className: "featurette-divider" }),
 	        _react2.default.createElement(
 	          "div",
 	          { className: "featurette", id: "services" },
 	          _react2.default.createElement(
 	            "div",
-	            { className: "row" },
+	            { className: "row hidden-xs hidden-sm" },
 	            _react2.default.createElement(
 	              "div",
-	              { className: "col-md-5 col-md-offset-2" },
+	              { className: "col-md-6 col-md-offset-1 col-lg-6 col-lg-offset-1", style: { position: 'relative', marginTop: 75 } },
 	              _react2.default.createElement(
 	                "div",
-	                { className: "row" },
-	                _react2.default.createElement("img", { className: "img-responsive col-md-8 pull-right ", src: "src/img/gameplay/title/web_title_feed.png" })
+	                { className: "row", style: { position: 'absolute', top: 30 } },
+	                _react2.default.createElement("img", { className: "img-responsive col-md-8 pull-right", src: "src/img/gameplay/title/web_title_story.png" })
 	              ),
 	              _react2.default.createElement(
 	                "div",
-	                { className: "row" },
-	                _react2.default.createElement(_TextPanel2.default, { infotext: "Improve their stats and befriend them to unlock memorable conversations." })
+	                { className: "row ", style: { marginTop: 200 } },
+	                _react2.default.createElement(_TextPanel2.default, { infotext: "Experience the mystery behind 3 warring factions and their dark past. Step into the shoes of Indra on his journey of self-discovery and his pursuit of truth and justice as you complete the quests. Immerse yourself in an interactive tale of love and loss." })
 	              )
 	            ),
 	            _react2.default.createElement(
 	              "div",
-	              { className: "col-md-4" },
-	              _react2.default.createElement("img", { className: "featurette-image img-responsive pull-right", src: "src/img/gameplay/web_image_feed_01.png" })
+	              { className: "col-md-5 col-lg-4", style: { marginLeft: -50 } },
+	              _react2.default.createElement("img", { className: "featurette-image img-responsive pull-right", src: "src/img/gameplay/web_screenshot_story_01.png" })
 	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row hidden-md hidden-lg", style: { margin: 9, marginBottom: -30 } },
+	            _react2.default.createElement("img", { className: "img-responsive col-sm-offset-1  col-xs-offset-1 col-sm-10  col-xs-10", style: { marginBottom: -35 }, src: "src/img/gameplay/title/web_title_story.png" }),
+	            _react2.default.createElement("img", { className: "img-responsive", style: { marginTop: -50, zIndex: -999 }, src: "src/img/gameplay/web_screenshot_story_01.png" })
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row hidden-md hidden-lg col-sm-12  col-xs-12" },
+	            _react2.default.createElement(_TextPanel2.default, { infotext: "Experience the mystery behind 3 warring factions and their dark past. Step into the shoes of Indra on his journey of self-discovery and his pursuit of truth and justice as you complete the quests. Immerse yourself in an interactive tale of love and loss." })
 	          )
 	        ),
+	        _react2.default.createElement("hr", { className: "featurette-divider", style: { backgroundColor: 'transparent' } }),
 	        _react2.default.createElement("img", { className: "img-responsive col-md-8 col-md-offset-2", src: "src/img/gameplay/title/web_title_monster.png" }),
+	        _react2.default.createElement("hr", { className: "featurette-divider", style: { backgroundColor: 'transparent' } }),
 	        _react2.default.createElement(
 	          "div",
 	          { className: "", id: "about" },
 	          _react2.default.createElement(
 	            "div",
-	            { className: "row" },
-	            _react2.default.createElement("img", { className: "img-responsive col-xs-6 col-sm-4", src: "src/img/gameplay/web_image_collect_01.png" }),
-	            _react2.default.createElement("img", { className: "img-responsive col-xs-6 col-sm-4", src: "src/img/gameplay/web_image_collect_02.png" }),
-	            _react2.default.createElement("img", { className: "img-responsive col-xs-6 col-sm-4", src: "src/img/gameplay/web_image_collect_03.png" }),
-	            _react2.default.createElement("img", { className: "img-responsive col-md-6 pull-right", src: "src/img/gameplay/title/web_title_collect.png" })
+	            { className: "row", style: { position: 'relative' } },
+	            _react2.default.createElement("img", { className: "img-responsive col-xs-12 col-sm-12 pull-right hidden-md hidden-lg", style: { marginBottom: -30 }, src: "src/img/gameplay/title/web_title_collect.png" }),
+	            _react2.default.createElement("img", { className: "img-responsive col-xs-10 col-sm-10 col-md-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 ", style: {}, src: "src/img/gameplay/web_image_evolve.png" }),
+	            _react2.default.createElement("img", { className: "img-responsive row hidden-xs hidden-sm col-md-8 pull-right", style: { position: 'absolute', right: 30, bottom: 0, margin: 'auto' }, src: "src/img/gameplay/title/web_title_collect.png" })
 	          )
 	        ),
-	        _react2.default.createElement("hr", { className: "featurette-divider" }),
 	        _react2.default.createElement(
 	          "div",
 	          { className: "featurette", id: "services" },
 	          _react2.default.createElement(
 	            "div",
-	            { className: "row" },
+	            { className: "row hidden-xs hidden-sm" },
 	            _react2.default.createElement(
 	              "div",
 	              { className: "col-md-5 col-md-offset-2" },
 	              _react2.default.createElement(
 	                "div",
 	                { className: "row" },
-	                _react2.default.createElement("img", { className: "img-responsive col-md-8 pull-right ", src: "src/img/gameplay/title/web_title_feed.png" })
+	                _react2.default.createElement("img", { className: "img-responsive col-md-8 pull-right ", src: "src/img/gameplay/title/web_title_feed.png", style: { marginBottom: -40 } })
 	              ),
 	              _react2.default.createElement(
 	                "div",
@@ -29142,17 +29235,28 @@
 	            _react2.default.createElement(
 	              "div",
 	              { className: "col-md-4" },
-	              _react2.default.createElement("img", { className: "featurette-image img-responsive pull-right", src: "src/img/gameplay/web_image_feed_01.png" })
+	              _react2.default.createElement("img", { className: " img-responsive pull-right", src: "src/img/gameplay/web_image_feed_01.png", style: { position: 'absolute', left: -100 } })
 	            )
-	          )
-	        ),
-	        _react2.default.createElement("hr", { className: "featurette-divider" }),
-	        _react2.default.createElement(
-	          "div",
-	          { className: "featurette", id: "contact" },
+	          ),
 	          _react2.default.createElement(
 	            "div",
-	            { className: "row" },
+	            { className: "row hidden-md hidden-lg", style: { margin: 9, marginBottom: -30 } },
+	            _react2.default.createElement("img", { className: "img-responsive col-xs-offset-1 col-sm-offset-1 col-xs-10 col-sm-10", style: { zIndex: 999 }, src: "src/img/gameplay/title/web_title_feed.png" }),
+	            _react2.default.createElement("img", { className: "img-responsive col-xs-offset-1 col-sm-offset-1 col-xs-10 col-sm-10", style: { marginTop: -50, zIndex: -999 }, src: "src/img/gameplay/web_image_feed_01.png" })
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row hidden-md hidden-lg col-sm-12  col-xs-12", style: { marginTop: -10 } },
+	            _react2.default.createElement(_TextPanel2.default, { infotext: "Improve their stats and befriend them to unlock memorable conversations." })
+	          )
+	        ),
+	        _react2.default.createElement("hr", { className: "featurette-divider", style: { backgroundColor: 'transparent' } }),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "featurette", id: "contact", style: { marginBottom: 100 } },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row row hidden-xs hidden-sm" },
 	            _react2.default.createElement(
 	              "div",
 	              { className: "col-md-5 col-md-offset-1" },
@@ -29160,11 +29264,11 @@
 	            ),
 	            _react2.default.createElement(
 	              "div",
-	              { className: "col-md-6" },
+	              { className: "col-md-6", style: { marginTop: 80 } },
 	              _react2.default.createElement(
 	                "div",
 	                { className: "row" },
-	                _react2.default.createElement("img", { className: "img-responsive col-md-10 pull-left ", src: "src/img/gameplay/title/web_title_custom.png" })
+	                _react2.default.createElement("img", { className: "img-responsive col-md-10 pull-left ", src: "src/img/gameplay/title/web_title_custom.png", style: { marginBottom: -30 } })
 	              ),
 	              _react2.default.createElement(
 	                "div",
@@ -29172,9 +29276,19 @@
 	                _react2.default.createElement(_TextPanel2.default, { infotext: "Optimise your Monster party with over 250 skills. Equip and summon Puffs to aid you in battles." })
 	              )
 	            )
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row hidden-md hidden-lg", style: { margin: 9, marginBottom: -30 } },
+	            _react2.default.createElement("img", { className: "img-responsive", style: { zIndex: 999 }, src: "src/img/gameplay/title/web_title_custom.png" }),
+	            _react2.default.createElement("img", { className: "img-responsive", style: { marginTop: -50, zIndex: -999 }, src: "src/img/gameplay/web_custom_01.png" })
+	          ),
+	          _react2.default.createElement(
+	            "div",
+	            { className: "row hidden-md hidden-lg col-sm-12  col-xs-12" },
+	            _react2.default.createElement(_TextPanel2.default, { infotext: "Optimise your Monster party with over 250 skills. Equip and summon Puffs to aid you in battles." })
 	          )
-	        ),
-	        _react2.default.createElement("hr", { className: "featurette-divider" })
+	        )
 	      );
 	    }
 	  }]);
@@ -29617,6 +29731,259 @@
 
 
 	exports.default = World;
+
+/***/ },
+/* 325 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(298);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(302);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(303);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(307);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(308);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var About = function (_React$Component) {
+	  (0, _inherits3.default)(About, _React$Component);
+
+	  function About() {
+	    (0, _classCallCheck3.default)(this, About);
+	    return (0, _possibleConstructorReturn3.default)(this, (About.__proto__ || (0, _getPrototypeOf2.default)(About)).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(About, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "ABOUT"
+	        )
+	      );
+	    }
+	  }]);
+	  return About;
+	}(_react2.default.Component);
+
+	exports.default = About;
+
+/***/ },
+/* 326 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(298);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(302);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(303);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(307);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(308);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ContactUs = function (_React$Component) {
+	  (0, _inherits3.default)(ContactUs, _React$Component);
+
+	  function ContactUs() {
+	    (0, _classCallCheck3.default)(this, ContactUs);
+	    return (0, _possibleConstructorReturn3.default)(this, (ContactUs.__proto__ || (0, _getPrototypeOf2.default)(ContactUs)).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(ContactUs, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "Contact Us"
+	        )
+	      );
+	    }
+	  }]);
+	  return ContactUs;
+	}(_react2.default.Component);
+
+	exports.default = ContactUs;
+
+/***/ },
+/* 327 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(298);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(302);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(303);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(307);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(308);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var PrivatePolicy = function (_React$Component) {
+	  (0, _inherits3.default)(PrivatePolicy, _React$Component);
+
+	  function PrivatePolicy() {
+	    (0, _classCallCheck3.default)(this, PrivatePolicy);
+	    return (0, _possibleConstructorReturn3.default)(this, (PrivatePolicy.__proto__ || (0, _getPrototypeOf2.default)(PrivatePolicy)).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(PrivatePolicy, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "PRIVATE POLICY"
+	        )
+	      );
+	    }
+	  }]);
+	  return PrivatePolicy;
+	}(_react2.default.Component);
+
+	exports.default = PrivatePolicy;
+
+/***/ },
+/* 328 */,
+/* 329 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(298);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(302);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(303);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(307);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(308);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Terms = function (_React$Component) {
+	  (0, _inherits3.default)(Terms, _React$Component);
+
+	  function Terms() {
+	    (0, _classCallCheck3.default)(this, Terms);
+	    return (0, _possibleConstructorReturn3.default)(this, (Terms.__proto__ || (0, _getPrototypeOf2.default)(Terms)).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(Terms, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "TERMS"
+	        )
+	      );
+	    }
+	  }]);
+	  return Terms;
+	}(_react2.default.Component);
+
+	exports.default = Terms;
 
 /***/ }
 /******/ ]);
